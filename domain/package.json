@@ -1,0 +1,16 @@
+{
+  "name": "@beadcraft/domain",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": { "node": ">=22.16.0" },
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test test/*.check.mjs"
+  },
+  "dependencies": { "ajv": "8.20.0", "ajv-formats": "3.0.1" },
+  "devDependencies": { "typescript": "5.9.3" }
+}

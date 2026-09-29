@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "metadata": {
+    "brand": "perler",
+    "width": 3,
+    "height": 2,
+    "dithering": "none",
+    "background": "transparent",
+    "createdAt": "2026-09-01T00:00:00Z",
+    "sourceHash": "legacy-source-reference"
+  },
+  "cells": [
+    [
+      {
+        "colorId": "old-white"
+      },
+      {
+        "colorId": "unknown-empty",
+        "isEmpty": true
+      },
+      {
+        "colorId": "old-clear"
+      }
+    ],
+    [
+      {
+        "colorId": "old-red"
+      },
+      {
+        "colorId": "old-white"
+      },
+      {
+        "colorId": "old-clear"
+      }
+    ]
+  ]
+}

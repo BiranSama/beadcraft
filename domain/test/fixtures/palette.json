@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "demo:palette",
+  "version": "1",
+  "name": "Synthetic fixture only",
+  "provenance": {
+    "kind": "demo",
+    "description": "Synthetic materials, not purchasing data",
+    "capturedOn": "2026-09-29",
+    "licenseNote": "Test data"
+  },
+  "colors": [
+    {
+      "index": 1,
+      "id": "demo:white",
+      "code": "W",
+      "name": "Demo white",
+      "displayHex": "#FFFFFF",
+      "brand": "DEMO",
+      "series": "fixture",
+      "finish": "opaque",
+      "enabled": true,
+      "conceptOnly": true,
+      "material": {
+        "fuseFamily": "unknown",
+        "compatibility": "unknown"
+      }
+    },
+    {
+      "index": 2,
+      "id": "demo:red",
+      "code": "R",
+      "name": "Demo red",
+      "displayHex": "#FF0000",
+      "brand": "DEMO",
+      "series": "fixture",
+      "finish": "opaque",
+      "enabled": true,
+      "conceptOnly": true,
+      "material": {
+        "fuseFamily": "unknown",
+        "compatibility": "unknown"
+      }
+    },
+    {
+      "index": 3,
+      "id": "demo:clear",
+      "code": "C",
+      "name": "Demo clear",
+      "displayHex": "#FFFFFF",
+      "brand": "DEMO",
+      "series": "fixture",
+      "finish": "clear",
+      "enabled": true,
+      "conceptOnly": true,
+      "material": {
+        "fuseFamily": "unknown",
+        "compatibility": "unknown"
+      }
+    }
+  ]
+}

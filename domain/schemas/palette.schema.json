@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:beadcraft:schema:palette:1",
+  "title": "PaletteSnapshot v1",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "manufacturer",
+            "community",
+            "user-measured",
+            "user",
+            "demo"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri",
+          "maxLength": 2000
+        },
+        "capturedOn": {
+          "type": "string",
+          "format": "date"
+        },
+        "licenseNote": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      },
+      "required": [
+        "kind",
+        "description",
+        "capturedOn",
+        "licenseNote"
+      ],
+      "additionalProperties": false
+    },
+    "colors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4096
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+          },
+          "code": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "displayHex": {
+            "type": "string",
+            "pattern": "^#[0-9A-Fa-f]{6}$"
+          },
+          "brand": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "series": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "finish": {
+            "type": "string",
+            "enum": [
+              "opaque",
+              "clear",
+              "translucent",
+              "special"
+            ]
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "conceptOnly": {
+            "type": "boolean"
+          },
+          "material": {
+            "type": "object",
+            "properties": {
+              "nominalDiameterMm": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 30
+              },
+              "fuseFamily": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "compatibility": {
+                "type": "string",
+                "enum": [
+                  "unknown",
+                  "user-verified",
+                  "manufacturer-declared"
+                ]
+              }
+            },
+            "required": [
+              "fuseFamily",
+              "compatibility"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "index",
+          "id",
+          "code",
+          "name",
+          "displayHex",
+          "brand",
+          "series",
+          "finish",
+          "enabled",
+          "conceptOnly",
+          "material"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 4096
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "id",
+    "version",
+    "name",
+    "provenance",
+    "colors"
+  ],
+  "additionalProperties": false
+}
